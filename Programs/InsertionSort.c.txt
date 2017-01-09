@@ -1,0 +1,143 @@
+                   
+			/*INSERTION SORTING*/
+#include<stdio.h>
+#include<conio.h>
+void sorta(int a[],int n) 			//to sort the numbers in ascending order
+			  			//a is the array with the numbers
+			  			//n is the size of the array
+{
+	int i,j,temp;
+	for(i=2;i<=n;i++)
+	{
+		for(j=i;j!=1;j--)
+		{
+			if(a[j]<a[j-1])
+			{
+				temp=a[j];
+				a[j]=a[j-1];
+				a[j-1]=temp;
+			}
+		}
+	}
+	printf("The numbers in ascending order is :\n");
+	for(i=1;i<=n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+}
+void sortd(int a[],int n)  			//to sort the numbers in descending order
+						//a is the array with the numbers
+			  			//n is the size of the array
+{
+	int i,j,temp;
+	for(i=2;i<=n;i++)
+	{
+		for(j=i;j!=1;j--)
+		{
+			if(a[j]>a[j-1])
+			{
+				temp=a[j];
+				a[j]=a[j-1];
+				a[j-1]=temp;
+			}
+		}
+	}
+	printf("The numbers in descending order is :\n");
+	for(i=1;i<=n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+}
+void input()                         					  //to get the input
+{
+	int n,ch;
+	int a[100],b[100];
+	do
+	{
+		clrscr();
+		printf("\t\t\tINSERTION SORTING\n\n");
+		printf("1.Enter new set of numbers\n\n2.Sort in acending order\n\n”);
+printf(“3.Sort in descending order\n\n");
+		printf("4.Exit\nChoose any one of the above :");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+			case 1:
+				printf("Enter the number of items to be inserted :");
+				scanf("%d",&n);
+				printf("Enter the numbers to be sorted :\n");
+				for(int i=1;i<=n;i++)
+				{
+					scanf("%d",&a[i]);
+					b[i]=a[i];
+				}
+				break;
+			case 2:
+				sorta(a,n);
+				for(i=1;i<=n;i++)
+				{
+					a[i]=b[i];
+				}
+				break;
+			case 3:
+				sortd(a,n);
+				for(i=1;i<=n;i++)
+				{
+					a[i]=b[i];
+				}
+				break;
+			case 4:
+				printf("Thank you very much\n");
+				break;
+			default:
+				printf("Choose any one from the given list\n");
+				break;
+		}
+		getch();
+	}while(ch!=4);
+}
+
+void main()
+{
+	clrscr();
+	input();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
